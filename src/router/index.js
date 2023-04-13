@@ -22,6 +22,9 @@ const routes = [
     beforeEach: (to, from, next) => {
       console.log('Manage Route')
       next()
+    },
+    meta: {
+      requireAuth: true
     }
   },
   {
