@@ -24,7 +24,7 @@ const routes = [
       next()
     },
     meta: {
-      requireAuth: true
+      requireAuth: false
     }
   },
   {
