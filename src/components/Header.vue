@@ -27,7 +27,7 @@
               <RouterLink class="px-2 text-white" to="/manage-music">Manage</RouterLink>
             </li>
             <li>
-              <a class="px-2 text-white" href="#" @click.prevent="userStore.signOut">Logout</a>
+              <a class="px-2 text-white" href="#" @click.prevent="signOut">Logout</a>
             </li>
           </template>
         </ul>
@@ -49,6 +49,13 @@ export default {
     toggleAuthModal() {
       this.modalStore.isOpen = !this.modalStore.isOpen
       console.log('this.modalStore.isOpen', this.modalStore.isOpen)
+    },
+    signOut() {
+      this.userStore.signOut()
+      // console.log(this.$router)
+      if (this.$route.name === 'manage') {
+        this.$router.push({ name: 'home' })
+      }
     }
   }
 }
